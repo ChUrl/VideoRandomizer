@@ -1,0 +1,10 @@
+@import "tailwindcss/base.css";
+
+@import "tailwindcss/components.css";
+
+/*My Imports*/
+@import "./components.pcss";
+
+@import "tailwindcss/utilities.css";
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhaWx3aW5kX3ByZS5wY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6InRhaWx3aW5kX2Rldi5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwidGFpbHdpbmRjc3MvYmFzZS5jc3NcIjtcblxuQGltcG9ydCBcInRhaWx3aW5kY3NzL2NvbXBvbmVudHMuY3NzXCI7XG5cbi8qTXkgSW1wb3J0cyovXG5AaW1wb3J0IFwiLi9jb21wb25lbnRzLnBjc3NcIjtcblxuQGltcG9ydCBcInRhaWx3aW5kY3NzL3V0aWxpdGllcy5jc3NcIjtcbiJdfQ== */
