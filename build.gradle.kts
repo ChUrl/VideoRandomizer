@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+	id("application")
 	id("org.springframework.boot") version "2.6.2"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.6.10"
@@ -11,6 +12,7 @@ plugins {
 group = "de.churl"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
+application.mainClass.set("de.churl.videorandomizer.VideoRandomizerApplicationKt")
 
 repositories {
 	mavenCentral()
