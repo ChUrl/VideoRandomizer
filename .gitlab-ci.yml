@@ -17,7 +17,7 @@ gradle-test:
       - .gradle
   script:
 #    - gradle --build-cache assemble
-    - gradle check --no-daemon -i --stacktrace
+    - gradle check --build-cache --no-daemon -i --stacktrace
 
 docker-build:
   image: docker:20 # provides the docker toolset (but without an active daemon)
