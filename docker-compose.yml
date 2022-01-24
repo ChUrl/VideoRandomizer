@@ -7,7 +7,7 @@ services:
       - database
     command: [ "/app/wait-for-it.sh", "videorandomizer_mongo:27017", "--", "java", "-Dspring.profiles.active=docker", "-jar", "/app/videorandomizer.jar" ]
     ports:
-      - '8080:8080'
+      - '8082:8080'
 
   database:
     image: "mongo:5.0.5"
@@ -16,7 +16,7 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=dev
       - MONGO_INITDB_ROOT_PASSWORD=dev_pass
-    ports:
-      - "27017:27017"
+#    ports:
+#      - "27017:27017"
     volumes:
       - ./storage:/data/db
