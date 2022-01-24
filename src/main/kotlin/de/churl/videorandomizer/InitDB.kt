@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct
 class InitDB(
     val videoRepository: VideoRepository,
 ) {
-    var run: Boolean = false
+    var run: Boolean = false  // only initialize database once
 
     @PostConstruct
     fun populateMongoDB() {

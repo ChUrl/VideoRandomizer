@@ -8,6 +8,7 @@ services:
     command: [ "/app/wait-for-it.sh", "videorandomizer_mongo:27017", "--", "java", "-Dspring.profiles.active=docker", "-jar", "/app/videorandomizer.jar" ]
     ports:
       - '8080:8080'
+
   database:
     image: "mongo:5.0.5"
     container_name: "videorandomizer_mongo"
