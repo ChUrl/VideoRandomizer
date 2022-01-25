@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet" th:href="@{/style/tailwind_dev.css}">
+<!--    <link rel="stylesheet" th:href="@{/style/tailwind_prod.css}">-->
+
     <title>VideoRandomizer</title>
 </head>
+
 <body>
-<h1>VideoRandomizer</h1>
+<header>
+    <h1>VideoRandomizer</h1>
+</header>
+
+<main>
+    <div th:each="video : ${videos}" class="cnt-card">
+        <h3 th:text="${video.getUrl()}">Error</h3>
+    </div>
+</main>
 </body>
+
 </html>
