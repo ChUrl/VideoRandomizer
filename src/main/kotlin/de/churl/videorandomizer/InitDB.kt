@@ -23,7 +23,7 @@ class InitDB(
             Video("4.com"),
             Video("5.com")
         )
-        
+
         videoRepository.deleteAll()
         videoRepository.saveAll(videos)
 
