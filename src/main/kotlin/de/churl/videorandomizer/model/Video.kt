@@ -7,7 +7,5 @@ import org.springframework.data.mongodb.core.mapping.Document
 data class Video (
 
     @Id
-    val id: String,
-
     val url: String
 )
