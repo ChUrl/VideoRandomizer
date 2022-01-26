@@ -17,12 +17,14 @@ class InitDB(
         if(run) return
 
         val videos: List<Video> = listOf(
-            Video("1", "1.com"),
-            Video("2", "2.com"),
-            Video("3", "3.com"),
-            Video("4", "4.com"),
-            Video("5", "5.com")
+            Video("1.com"),
+            Video("2.com"),
+            Video("3.com"),
+            Video("4.com"),
+            Video("5.com")
         )
+        
+        videoRepository.deleteAll()
         videoRepository.saveAll(videos)
 
         run = true
