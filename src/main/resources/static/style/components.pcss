@@ -1,14 +1,52 @@
 @layer components {
     header {
-        @apply py-5;
-        @apply bg-gray-500 fixed w-full top-0 shadow-lg;
+        @apply p-5;
+        @apply bg-gray-700 drop-shadow-md;
+        @apply fixed w-full top-0;
+
+        h1 {
+            @apply text-slate-50 font-medium tracking-wide text-lg font-sans;
+        }
     }
 
     main {
-        @apply w-3/4 mt-20 mx-auto;
+        @apply mt-24;
+        @apply w-3/4 mx-auto;
+    }
+
+    form {
+        label {
+            @apply mr-2;
+            @apply font-medium tracking-wide text-lg font-sans;
+        }
+
+        input {
+            @apply mr-2;
+        }
+
+        .textinput {
+            outline: none;
+
+            @apply p-1;
+            @apply rounded-md shadow-inner;
+            @apply focus:drop-shadow-lg;
+            @apply transition-all;
+        }
+
+        .buttonsuccess {
+            @apply p-1;
+            @apply bg-green-400 rounded-md;
+            @apply hover:bg-green-700 hover:drop-shadow-lg hover:text-slate-50;
+            @apply transition-all;
+        }
     }
 
     .cnt-card {
-        @apply bg-gray-100 rounded-md drop-shadow-md w-full pb-10;
+        @apply p-5 mb-5;
+        @apply text-gray-900;
+        @apply bg-gray-200 rounded-md drop-shadow-sm;
+        @apply hover:bg-gray-300 hover:drop-shadow-lg;
+        @apply transition-all;
+        @apply w-full;
     }
 }
