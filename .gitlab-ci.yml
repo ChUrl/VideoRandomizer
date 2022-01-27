@@ -2,30 +2,36 @@ workflow:
   rules:
     - if: '$CI_COMMIT_REF_NAME == "main"'
 
-gradle-test:
-  needs: []
-  image: gradle:7.3.3-jdk17-alpine
-  variables:
-    GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+#gradle-test:
+#  needs: []
+#  image: gradle:7.3.3-jdk17-alpine
+#  variables:
+#    GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+#  before_script:
+#    - export GRADLE_USER_HOME=`pwd`/.gradle
+#  cache:
+#    key: "$CI_COMMIT_REF_NAME"
+#    policy: push
+#    paths:
+#      - build
+#      - .gradle
+#  script:
+##    - gradle --build-cache assemble
+#    - gradle check --build-cache --no-daemon -i --stacktrace
+
+docker-build:
+  image: docker:20 # provides the docker toolset (but without an active daemon)
+#  needs: ["gradle-test"]
+  services: # configure images that run during jobs linked to the image (above)
+    - docker:dind # dind build on docker and starts up the dockerdaemon (docker itself doesn't do that), which is needed to call docker build etc.
   before_script:
-    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - docker login -u $CI_REGISTRY_USER -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   cache:
     key: "$CI_COMMIT_REF_NAME"
     policy: push
     paths:
       - build
       - .gradle
-  script:
-#    - gradle --build-cache assemble
-    - gradle check --build-cache --no-daemon -i --stacktrace
-
-docker-build:
-  image: docker:20 # provides the docker toolset (but without an active daemon)
-  needs: ["gradle-test"]
-  services: # configure images that run during jobs linked to the image (above)
-    - docker:dind # dind build on docker and starts up the dockerdaemon (docker itself doesn't do that), which is needed to call docker build etc.
-  before_script:
-    - docker login -u $CI_REGISTRY_USER -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
     - docker pull $CI_REGISTRY_IMAGE:latest || true # latest image for cache (not failing if image is not found)
     - >
