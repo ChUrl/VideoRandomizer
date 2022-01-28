@@ -3,8 +3,9 @@ const cssnano = require('cssnano')
 module.exports = {
     plugins: [
         require('postcss-import'),
+        require('tailwindcss/nesting'), // uses nested per default
+        // require('postcss-nested'),
         require('tailwindcss'),
-        require('postcss-nested'),
         require('postcss-sorting'),
         require('postcss-utilities'),
         require('postcss-font-magician'),

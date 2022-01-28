@@ -1,5 +1,52 @@
-// Example Button
-.btn-indigo {
-    @apply bg-indigo-900 text-white border-indigo-900 border-2 rounded px-3 py-2 cursor-pointer inline-block;
-    @apply transition-all duration-200 hover:bg-white hover:text-indigo-900 transform-gpu hover:scale-x-105;
+@layer components {
+    header {
+        @apply p-5;
+        @apply bg-gray-700 drop-shadow-md;
+        @apply fixed w-full top-0;
+
+        h1 {
+            @apply text-slate-50 font-medium tracking-wide text-lg font-sans;
+        }
+    }
+
+    main {
+        @apply mt-24;
+        @apply w-3/4 mx-auto;
+    }
+
+    form {
+        label {
+            @apply mr-2;
+            @apply font-medium tracking-wide text-lg font-sans;
+        }
+
+        input {
+            @apply mr-2;
+        }
+
+        .textinput {
+            outline: none;
+
+            @apply p-1;
+            @apply rounded-md shadow-inner;
+            @apply focus:drop-shadow-lg;
+            @apply transition-all;
+        }
+
+        .buttonsuccess {
+            @apply p-1;
+            @apply bg-green-400 rounded-md;
+            @apply hover:bg-green-700 hover:drop-shadow-lg hover:text-slate-50;
+            @apply transition-all;
+        }
+    }
+
+    .cnt-card {
+        @apply p-5 mb-5;
+        @apply text-gray-900;
+        @apply bg-gray-200 rounded-md drop-shadow-sm;
+        @apply hover:bg-gray-300 hover:drop-shadow-lg;
+        @apply transition-all;
+        @apply w-full;
+    }
 }

@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   application:
-    image: registry.gitlab.com/churl/videorandomizer
+    image: "registry.gitlab.com/churl/videorandomizer"
     container_name: "videorandomizer_app"
     depends_on:
       - database
@@ -16,7 +16,7 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=dev
       - MONGO_INITDB_ROOT_PASSWORD=dev_pass
-#    ports:
-#      - "27017:27017"
+    ports:
+      - "27017:27017"
     volumes:
       - ./storage:/data/db
