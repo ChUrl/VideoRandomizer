@@ -39,3 +39,4 @@ out/
 /package-lock.json
 /storage/
 /src/main/kotlin/de/churl/videorandomizer/InitDB.kt
+/src/main/resources/keystore.p12
