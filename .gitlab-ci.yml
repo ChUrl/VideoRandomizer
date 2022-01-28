@@ -1,6 +1,10 @@
 workflow:
   rules:
     - if: '$CI_COMMIT_REF_NAME == "main"'
+      changes:
+        - "src/**/*"
+        - "Dockerfile"
+        - "docker-compose.yml"
 
 #gradle-test:
 #  needs: []
